@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Caveat", cursive;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: #3e0205;
+    color: #ffffff;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+/* Exact Poster Deep Crimson Radial Gradients */
+.bg-poster-crimson {
+  background: radial-gradient(circle at 50% 35%, #84070d 0%, #5e0307 48%, #350103 100%);
+}
+
+.bg-poster-crimson-alt {
+  background: radial-gradient(circle at 50% 50%, #6d0409 0%, #480205 60%, #2d0102 100%);
+}
+
+.bg-poster-panel {
+  background: linear-gradient(180deg, rgba(96, 4, 8, 0.72) 0%, rgba(50, 2, 4, 0.88) 100%);
+}
+
+/* Tapering Amber-Gold Horizontal Hairline Divider from Poster */
+.poster-divider-line {
+  background: linear-gradient(90deg, transparent 0%, rgba(243, 146, 0, 0.85) 50%, transparent 100%);
+}
+
+/* Subtle Steam Rising Motion */
+@keyframes steamRise {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  40% {
+    opacity: 0.35;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px) scale(1.08);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-steam-slow {
+  animation: steamRise 5.5s ease-in-out infinite;
+}
+
+.animate-steam-delayed {
+  animation: steamRise 6.2s ease-in-out 2.1s infinite;
+}
+
+.animate-float-gentle {
+  animation: gentleFloat 6.5s ease-in-out infinite;
+}
+
+.animate-float-gentle-delayed {
+  animation: gentleFloat 7.2s ease-in-out 1.4s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-steam-slow,
+  .animate-steam-delayed,
+  .animate-float-gentle,
+  .animate-float-gentle-delayed {
+    animation: none !important;
+    transform: none !important;
+  }
+}
