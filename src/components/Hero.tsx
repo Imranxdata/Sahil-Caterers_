@@ -70,11 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ onPlanEvent }) => {
             <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#F39200]/70 to-[#F5DFB5]/90" />
           </div>
 
-          <p className="mt-2 text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#F39200] uppercase">
-            {businessConfig.fullLocation}
-          </p>
-
-          <div className="mt-1.5 flex flex-col items-center">
+          <div className="mt-2 flex flex-col items-center">
             <p className="font-display text-lg sm:text-2xl font-semibold italic text-white">
               Good Food. Great Gatherings. Unforgettable Moments.
             </p>
